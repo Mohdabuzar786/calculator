@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<title>Calculator</title>
+<meta charset="UTF-8">
+<style>
+body {background:gray;}
+table,tr,th{
+            border:1px solid black;
+            background: #3A4655;
+            border-collapse: collapse;
+            width:240px;
+            height:60px;
+            margin:auto;
+           }
+table {
+       box-shadow:3px 5px 8px 8px pink;
+      }
+#ab {
+       background: #3A4655;
+       border:1px solid transparent;
+       font-size:30px;   
+       color:#fff;
+       text-align:right;
+    }
+button {
+        background: #3A4655;
+        border:1px solid transparent;
+        font-size:20px;
+        color:#fff;
+</style>
+<body>
+<div>
+<table>
+  <tr>
+   <th colspan="4;"><input type="text" style="width:280px;height:75px;" id="ab" ></th>
+  </tr>
+  <tr>
+   <th><button style="color:red;" onclick="document.getElementById('ab').value=''">AC</button></th>
+   <th><button style="color:#ffbc56;" onclick="swap()">+/-</button></th>
+   <th><button style="color:#ffbc56;" onclick="mod()">%</button></th>
+   <th><button style="color:#ffbc56;" onclick="div()">÷</button></th>
+  </tr>
+
+  <tr>
+    <th> <button onclick="document.getElementById('ab').value +='7'">7</button></th>
+    <th><button onclick="document.getElementById('ab').value +='8'">8</button></th>
+    <th><button onclick="document.getElementById('ab').value +='9'">9</button></th>
+    <th><button style="color:#ffbc56;" onclick="mul()">&#215;</button></th>
+  </tr>
+
+  <tr>
+    <th><button onclick="document.getElementById('ab').value +='4'">4</button></th>
+    <th><button onclick="document.getElementById('ab').value +='5'">5</button></th>
+    <th><button onclick="document.getElementById('ab').value +='6'">6</button></th>
+    <th><button style="color:#ffbc56;" onclick="sub()">&#8722;</button></th>
+  </tr>
+
+  <tr>
+    <th><button onclick="document.getElementById('ab').value +='1'">1</button></th>
+    <th><button onclick="document.getElementById('ab').value +='2'">2</button></th>
+    <th><button onclick="document.getElementById('ab').value 
++='3'">3</button></th>
+    <th><button style="color:#ffbc56;" onclick="add()">&#43;</button></th>
+  </tr>
+
+  <tr>
+    <th><button onclick="document.getElementById('ab').value +='0'"> 0</button></th>
+    <th><button onclick="document.getElementById('ab').value+='.'">.</button></th>
+    <th><button style="color:#ffbc56;" onclick="cross()">&#9003;</button></th>
+    <th><button style="color:#ffbc56;" onclick="calculate()">&#61;</button></th>
+  </tr>
+</table>
+
+</div>
+
+<script>
+ var num1, num2, op ,res;
+
+function calculate()
+{
+  num2=document.getElementById('ab').value;
+  n1=parseInt(num1);
+  n2=parseInt(num2)
+  if(op=="+")
+  {
+   res=n1+n2;
+   document.getElementById('ab').value=res;
+
+  }
+  else if(op=="-")
+  {
+   res=n1-n2;
+   document.getElementById('ab').value=res;
+
+  }
+  
+   else if(op=="/")
+  {
+   res=n1/n2;
+   document.getElementById('ab').value=res;
+
+  }
+   else if(op=="*")
+  {
+   res=n1*n2;
+  document.getElementById('ab').value=res;
+
+  }
+else if(op=="%")
+  {
+   res=n1/100*n2;
+  document.getElementById('ab').value=res;
+
+  }
+}
+
+ function add() {
+num1=document.getElementById('ab').value;
+op="+";
+document.getElementById('ab').value = "";
+
+//document.write(num1)
+}
+function sub() {
+num1=document.getElementById('ab').value;
+op="-";
+document.getElementById('ab').value= "";
+
+//document.write(num1)
+}
+function div() {
+num1=document.getElementById('ab').value;
+op="/";
+document.getElementById('ab').value = "";
+
+//document.write(num1)
+}
+function mul() {
+num1=document.getElementById('ab').value;
+op="*";
+document.getElementById('ab').value="";
+ //document.write(num1)
+}
+function mod() {
+num1=document.getElementById('ab').value;
+op="*";
+document.getElementById('ab').value="";
+
+}
+
+function cross() {
+num=document.getElementById('ab').value;
+num=parseInt(num/10);
+document.getElementById('ab').value=num;
+
+}
+function swap() {
+num=document.getElementById('ab').value;
+num=parseInt(num)
+if(num>0)
+{
+num="-"+num
+document.getElementById('ab').value=num;
+}
+else if(num<0)
+{
+
+  document.getElementById('ab').value=  Math.abs(num);
+}
+
+
+}
+</script>
+</body>
+</html>
